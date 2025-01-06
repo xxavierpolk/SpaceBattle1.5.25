@@ -50,11 +50,21 @@ let gameOver = false;
 
 while (!gameOver) {
     const currentAlien = alienFleet[currentAlienIndex]
-    console.log(`New Squabble Begins! Squaring Up ${currentAlien.name}`);
+    console.log(`\nNew Squabble Begins! Squaring Up ${currentAlien.name}`);
 }
 
 
 // Battle Round
+
+while (myPlayer.hull > 0 && currentAlien > 0) {
+    myPlayer.attack(currentAlien);
+    if (currentAlien.hull <= 0){
+        console.log(`${currentAlien.name} got folded & destroyed`);
+        break;
+    }
+}
+
+
 
 // New Round or Retreat
 
