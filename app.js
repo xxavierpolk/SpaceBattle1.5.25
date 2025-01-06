@@ -71,11 +71,18 @@ while (myPlayer.hull > 0 && currentAlien > 0) {
 }
 }
 
-
-
-
 // New Round or Retreat
 
+if (!gameOver) {
+    if (currentAlienIndex === alien - 1) {
+        console.log(`All alien members have been rocked and destroyed. YOU WIN!`)
+        gameOver = true;
+    } else {
+        currentAlienIndex++;
+        console.log("Do you want to attack the next ship or retreat?")
+        console.log("Auto-deciding: Proceeding to the next battle.")
+    }
+}
 
 
 
