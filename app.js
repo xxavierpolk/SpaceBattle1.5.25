@@ -11,7 +11,7 @@ class SpaceShip {
         console.log('${this.name} attacks ${target.name}!')
         if (Math.random() < this.accuracy) {
             console.log('Attack Landed! ${target.name} eats ${this.firepower} damage.');
-            target.hullull -= this.firepower;
+            target.hull -= this.firepower;
         } else {
             console.log('Attack avoided')
         }
@@ -25,7 +25,17 @@ const myPlayer = new SpaceShip("USS ASSEMBLY", 20, 5, 0.7);
 
 
 // Alien Gang
-const alienMember = new SpaceShip("Alien Member 1", 6, 3, 0.6)
+function generateAlienGang(numOfShips) {
+    const alienGang = [];
+    for (let i = 0; i < numOfShips; i++) {
+        const hull = Math.floor(Math.random() * (6 - 3 + 1) + 3);
+        const firepower = Math.floor(Math.random() * (4 - 2 + 1) + 2);
+        const accuracy = Math.random() * (0.8 - 0.6) + 0.6;
+        alienShips.push(new SpaceShip('Alien Ship ${i + 1}', hull, firepower, accuracy));
+    }
+    return alienGang;
+
+}
 
 // Game Round 
 
