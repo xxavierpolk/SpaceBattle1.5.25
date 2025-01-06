@@ -11,7 +11,7 @@ class SpaceShip {
         console.log('${this.name} attacks ${target.name}!')
         if (Math.random() < this.accuracy) {
             console.log('Attack Landed! ${target.name} eats ${this.firepower} damage.');
-            target.jull -= this.firepower;
+            target.hullull -= this.firepower;
         } else {
             console.log('Attack avoided')
         }
@@ -21,8 +21,11 @@ class SpaceShip {
 
 
 // My spaceship / USS ASSEMBLY
+const myPlayer = new SpaceShip("USS ASSEMBLY", 20, 5, 0.7);
+
 
 // Alien Gang
+const alienMember = new SpaceShip("Alien Member 1", 6, 3, 0.6)
 
 // Game Round 
 
