@@ -8,12 +8,12 @@ class SpaceShip {
     }
 
     attack(target) {
-        console.log('${this.name} attacks ${target.name}!')
+        console.log(`${this.name} attacks ${target.name}!`)
         if (Math.random() < this.accuracy) {
-            console.log('Attack Landed! ${target.name} eats ${this.firepower} damage.');
+            console.log(`Attack Landed! ${target.name} catches fade and eats ${this.firepower} damage.`);
             target.hull -= this.firepower;
         } else {
-            console.log('Attack avoided')
+            console.log('Attack avoided');
         }
     }
 }
@@ -31,7 +31,7 @@ function generateAlienGang(numOfShips) {
         const hull = Math.floor(Math.random() * (6 - 3 + 1) + 3);
         const firepower = Math.floor(Math.random() * (4 - 2 + 1) + 2);
         const accuracy = Math.random() * (0.8 - 0.6) + 0.6;
-        alienGang.push(new SpaceShip('Alien Ship{i  $+ 1}', hull, firepower, accuracy));
+        alienGang.push(new SpaceShip(`Alien Member ${i + 1}`, hull, firepower, accuracy));
     }
     return alienGang;
 
@@ -39,11 +39,20 @@ function generateAlienGang(numOfShips) {
 
 // Creating the Alien Gang Fleet
 
-const alienFleet = generateAlienGang(6)
-console.log("Alien Fleet", alienFleet)
+const alienFleet = generateAlienGang(6);
+console.log("Alien Fleet", alienFleet);
 
 
 // Game Round 
+
+let currentAlienIndex = 0;
+let gameOver = false;
+
+while (!gameOver) {
+    const currentAlien = alienFleet[currentAlienIndex]
+    console.log(`New Squabble Begins! Squaring Up ${currentAlien.name}`);
+}
+
 
 // Battle Round
 
