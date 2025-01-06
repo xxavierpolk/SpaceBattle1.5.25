@@ -62,7 +62,15 @@ while (myPlayer.hull > 0 && currentAlien > 0) {
         console.log(`${currentAlien.name} got folded & destroyed`);
         break;
     }
+
+    currentAlien.attack(myPlayer)
+    if (myPlayer.hull <= 0) {
+    console.log(`USS ASSEMBLY got clocked & destroyed. Game Over Son, Word. Aliens Die Everyday B.`)
+    gameOver = true;
+    break;
 }
+}
+
 
 
 
